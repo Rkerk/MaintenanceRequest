@@ -16,7 +16,8 @@ public CustomerRequestView(CustServViewModel service) {
 		GridCrud<MaintenanceRequest> crud = new GridCrud<>(MaintenanceRequest.class, service);
 		crud.getCrudFormFactory().setVisibleProperties("requestID", "date", "itemName", "itemAssetTag", "requestStatus", "description");
 		crud.getGrid().setColumns("requestID", "date", "itemName", "itemAssetTag", "requestStatus", "description");
-		
+		crud.setDeleteOperationVisible(false);
+		crud.setUpdateOperationVisible(false);
 		add(crud);
 		setSizeFull();
 	}
